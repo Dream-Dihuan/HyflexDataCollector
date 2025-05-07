@@ -158,17 +158,17 @@ public class ProblemInstanceInfo {
 
     @Override
     public String toString() {
-        return "ProblemInstanceInfo{" +
-                "heuristic='" + heuristic + '\'' +
+        return "{" +
+                "  heuristicAlgorithm='" + heuristic + '\'' +
                 ", problemDomain='" + problemDomain + '\'' +
                 ", instance='" + instance + '\'' +
                 ", run='" + run + '\'' +
                 ", bestValue=" + bestValue +
-                ", timeout=" + timeout +
-                ", timeMillis=" + timeMillis +
-                ", heuristicCallTimes=" + heuristicCallTimes +
+                ", timeLimit=" + timeout +
+                ", executionTime=" + timeMillis +
+                ", heuristicCalls=" + heuristicCallTimes +
                 ", instanceScore=" + instanceScore +
                 ", totalScore=" + totalScore +
-                '}';
+                '}'+'\n';
     }
 }

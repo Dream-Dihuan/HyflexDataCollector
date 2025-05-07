@@ -28,8 +28,8 @@ public class ReadResultJsonFileUtils {
                     double instanceScore = instanceEntry.getValue();
 
                     for (ProblemInstanceInfo info : problemInstanceInfoList) {
-                        System.out.println("problemDomain:"+problemDomain+" instanceRunKey:"+instanceRunKey+" algorithmName:"+algorithmName);
-                        System.out.println("infoProblemDomain:"+info.getProblemDomain()+" instanceRunKey"+info.getInstance()+" infoHeuristic:"+info.getHeuristic());
+//                        System.out.println("problemDomain:"+problemDomain+" instanceRunKey:"+instanceRunKey+" algorithmName:"+algorithmName);
+//                        System.out.println("infoProblemDomain:"+info.getProblemDomain()+" instanceRunKey"+info.getInstance()+" infoHeuristic:"+info.getHeuristic());
 
                         if (algorithmName.equals(info.getHeuristic()) &&
                                 problemDomain.equals(info.getProblemDomain())&& instanceRunKey.equals(info.getInstance())){

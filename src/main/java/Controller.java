@@ -1,9 +1,15 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import model.ProblemInstanceInfo;
 import utils.DataCollector;
 import utils.ExcelFileGenerator;
+import utils.JsonRecordsListGenerator;
 import utils.ReadResultJsonFileUtils;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Controller {
 
@@ -18,6 +24,9 @@ public class Controller {
         //excel生成路径
         String excelGemeratorFilePath = "C:\\Users\\迪幻\\Desktop\\output2.xlsx";
 
+        // json数组对象
+        String jsonFilePath = "C:\\Users\\迪幻\\Desktop\\jsonList.txt";
+
         // 收集处理日志输出数据
         List<ProblemInstanceInfo> problemInstanceInfoList = DataCollector.extractData(logFilePath);
 
@@ -29,8 +38,19 @@ public class Controller {
             e.printStackTrace();
         }
 
+
+
+        // 输出json对象数组
+        System.out.println(problemInstanceInfoList);
+
+        // 输出到json文件
+        JsonRecordsListGenerator.generateJsonRecordsList(problemInstanceInfoList,jsonFilePath);
+
+
         // 输出到excel
         ExcelFileGenerator.generateExcelFile(problemInstanceInfoList,excelGemeratorFilePath);
+
+
 
 
     }
